@@ -1,5 +1,3 @@
-package com.example.caixa
-
 class Caixa(private var saldo: Double = 0.0) {
     fun consultarSaldo(): Double {
         return saldo
