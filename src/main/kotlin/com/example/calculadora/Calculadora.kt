@@ -16,7 +16,7 @@ class Calculadora {
 
         fun dividir(a: Double, b: Double): Double {
             if (b == 0.0) {
-                throw IllegalArgumentException("Divisão por zero não permitida.")
+                throw IllegalArgumentException("Divisão por zero não é permitida.")
             }
             return a / b
         }

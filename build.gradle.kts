@@ -22,6 +22,15 @@ repositories {
     mavenCentral()
 }
 
+tasks.test {
+    testLogging {
+        events("PASSED", "FAILED", "SKIPPED")
+        showStandardStreams = true  // Exibe os logs no console durante a execução dos testes
+        exceptionFormat = org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
+    }
+}
+
+
 dependencies {
     implementation("io.ktor:ktor-server-core-jvm")
     implementation("io.ktor:ktor-server-content-negotiation-jvm")
@@ -31,4 +40,5 @@ dependencies {
     implementation("io.ktor:ktor-server-config-yaml")
     testImplementation("io.ktor:ktor-server-test-host-jvm")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
+    testImplementation("io.kotest:kotest-assertions-core:5.0.0")
 }
